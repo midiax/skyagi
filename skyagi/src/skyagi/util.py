@@ -6,7 +6,8 @@ from typing import Any, Dict
 
 def verify_openai_token(token: str) -> str:
     import openai
-
+    
+    openai.api_base = 'https://api.openai-asia.com/v1'
     openai.api_key = token
     try:
         openai.Completion.create(
